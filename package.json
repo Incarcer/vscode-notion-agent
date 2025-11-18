@@ -1,0 +1,70 @@
+{
+  "name": "notion-agent",
+  "displayName": "Notion Workspace Agent",
+  "description": "Query your Notion workspace with @roadmap in VSCode chat",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["AI", "Chat"],
+  "activationEvents": ["onLanguage:*"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "notion-agent.roadmap",
+        "name": "roadmap",
+        "description": "Query your Notion workspace and roadmap",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "tasks",
+            "description": "List tasks from roadmap"
+          },
+          {
+            "name": "search",
+            "description": "Search workspace pages"
+          },
+          {
+            "name": "update",
+            "description": "Update task status"
+          },
+          {
+            "name": "create",
+            "description": "Create new task"
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "Notion Agent",
+      "properties": {
+        "notionAgent.token": {
+          "type": "string",
+          "default": "",
+          "description": "Notion Integration Token",
+          "markdownDescription": "Get from https://www.notion.so/my-integrations"
+        },
+        "notionAgent.roadmapDatabaseId": {
+          "type": "string",
+          "default": "",
+          "description": "Roadmap Database ID"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15"
+  }
+}
