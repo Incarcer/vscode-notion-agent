@@ -10,8 +10,13 @@
   "engines": {
     "vscode": "^1.90.0"
   },
-  "categories": ["AI", "Chat"],
-  "activationEvents": ["onLanguage:*"],
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "activationEvents": [
+    "onLanguage:*"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "chatParticipants": [
@@ -64,6 +69,7 @@
     "package": "vsce package"
   },
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
     "@types/node": "^20.x",
     "@types/vscode": "^1.90.0",
     "typescript": "^5.3.0"
