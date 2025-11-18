@@ -2,6 +2,7 @@
   "name": "notion-agent",
   "displayName": "Notion Workspace Agent",
   "description": "Query your Notion workspace with @roadmap in VSCode chat",
+  "publisher": "customvenom",
   "version": "0.1.0",
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "Chat"
   ],
   "activationEvents": [
-    "onLanguage:*"
+    "onChatParticipant:notion-agent.roadmap"
   ],
   "main": "./out/extension.js",
   "contributes": {
